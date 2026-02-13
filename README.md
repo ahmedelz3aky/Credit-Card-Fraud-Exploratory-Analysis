@@ -1,19 +1,4 @@
-
-# Credit Card Fraud Exploratory Analysis
-
-## الوصف
-مشروع تحليل استكشافي لبيانات معاملات بطاقات الائتمان بهدف فهم أنماط الاحتيال. يتضمن تنظيف البيانات، تصور النتائج، وملاحظات مبدئية.
-
-## الملفات المضمنة في المستودع
-- `Home.py` — سكربت مساعد
-- `requirements.txt` — تبعيات المشروع
-- `code.ipynb` — (موجود لكن يُدار عبر Git LFS) دفتر Jupyter يحتوي على كامل التحليل
-- `cleaned_df.parquet` — (موجود لكن يُدار عبر Git LFS) نسخة منظفة من البيانات
-- `credit_card_transactions.parquet` — (موجود لكن يُدار عبر Git LFS) ملف البيانات الأصلي
-
-> ملاحظة: الملفات الكبيرة (`.ipynb` كبير، وملفات `.parquet`) مخزنة باستخدام Git LFS لتفادي حدود GitHub على أحجام الملفات.
-
- # Credit Card Fraud — Exploratory Analysis
+# Credit Card Fraud — Exploratory Analysis
 
  ## Project Overview
  This repository contains an exploratory data analysis (EDA) of credit card transactions to investigate patterns that may indicate fraudulent behavior. The analysis covers data cleaning, feature inspection, visualizations, and initial modeling experiments.
