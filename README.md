@@ -51,74 +51,83 @@ jupyter lab  # أو jupyter notebook
 ## تاريخ الرفع والتنظيف
 - تم رفع المشروع إلى GitHub مع استبعاد/إدارة الملفات الكبيرة بواسطة Git LFS.
 
-# Credit Card Fraud — Exploratory Analysis (تحليل استكشافي للاحتيال باستخدام بيانات البطاقات)
 
-### نبذة
-مشروع يهدف إلى استكشاف وتحليل بيانات معاملات بطاقات الائتمان لاستخراج أنماط قد تشير إلى سلوك احتيالي. يتضمن تنظيف البيانات، تحليل وصفّي، تصورات متعددة، وبعض تجارب النمذجة الأولية.
+# Credit Card Fraud — Exploratory Analysis
 
-### المميزات
-- معالجة وتنظيف البيانات وتسليم نسخة `cleaned_df.parquet` جاهزة للتحليل.
-- دفتر عمل تفاعلي `code.ipynb` يحتوي على الشرح، الرسوم البيانية، والنتائج.
-- تعليمات لإدارة الملفات الكبيرة باستخدام Git LFS.
+## Overview
+This repository contains an exploratory analysis of credit card transactions aimed at identifying patterns that may indicate fraudulent activity. The project includes data cleaning, descriptive analysis, visualizations, and initial modeling experiments.
 
-### بنية المستودع (المهمة الحالية)
-- `Home.py` — سكربت مساعد لتشغيل أجزاء من التحليل برمجياً
-- `requirements.txt` — تبعيات Python للمشروع
-- `code.ipynb` — دفتر Jupyter (مُخزن عبر Git LFS)
-- `cleaned_df.parquet` — نسخة منظفة من البيانات (مُدارة عبر Git LFS)
-- `credit_card_transactions.parquet` — البيانات الخام (مُدارة عبر Git LFS)
+## Highlights
+- Cleaned dataset ready for analysis: `cleaned_df.parquet` (managed with Git LFS)
+- Interactive analysis notebook: `code.ipynb` (managed with Git LFS)
+- Original dataset: `credit_card_transactions.parquet` (managed with Git LFS)
 
-### متطلبات سابقة
+## Repository structure
+- `Home.py` — helper script to run portions of the analysis programmatically
+- `requirements.txt` — Python dependencies
+- `code.ipynb` — Jupyter notebook with the full EDA (tracked via Git LFS)
+- `cleaned_df.parquet` — cleaned dataset used in the notebook (tracked via Git LFS)
+- `credit_card_transactions.parquet` — original/raw dataset (tracked via Git LFS)
+
+## Requirements
 - Python 3.8+
 - Git
-- Git LFS (لتحميل الملفات الكبيرة)
+- Git LFS (required to download large files)
 
-### تثبيت وتشغيل (موجز)
-1. استنخِب المشروع:
+## Quick start
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/ahmedelz3aky/Credit-Card-Fraud-Exploratory-Analysis.git
 cd Credit-Card-Fraud-Exploratory-Analysis
 ```
 
-2. تثبيت Git LFS (مرة واحدة على الجهاز) وتشغيله:
+2. Install and initialize Git LFS (one-time setup on your machine):
 
 ```bash
 # Windows (PowerShell)
-choco install git-lfs -y   # إذا كان لديك Chocolatey
-# أو نزِّل من https://git-lfs.github.com واتّبع التعليمات
+choco install git-lfs -y    # if you use Chocolatey
+# or download from https://git-lfs.github.com and follow instructions
 git lfs install
 ```
 
-3. سحب محتويات LFS (بعد استنساخ المستودع):
+3. Download LFS objects (after cloning):
 
 ```bash
 git lfs pull --all
 ```
 
-4. إنشاء بيئة افتراضية وتثبيت التبعيات:
+4. Create a virtual environment and install dependencies:
 
 ```bash
 python -m venv .venv
-.\.venv\Scripts\activate
+.\.venv\Scripts\activate   # PowerShell/Windows
 pip install -r requirements.txt
 ```
 
-5. فتح `code.ipynb` في Jupyter Lab / Notebook:
+5. Start Jupyter and open the analysis notebook:
 
 ```bash
 jupyter lab
 ```
 
-### ملاحظات حول البيانات والخصوصية
-- ملف `credit_card_transactions.parquet` يحتوي بيانات معاملات؛ تأكد من احترام أي شروط خصوصية أو قيود مشاركة تنطبق على البيانات قبل إعادة توزيعها.
+## Data privacy and usage
+The `credit_card_transactions.parquet` dataset contains transaction-level data. Make sure you have the right to access and use this data and follow any applicable privacy or compliance requirements before sharing it.
 
-### نصائح مُتعلقة بـ Git LFS
-- GitHub يحدّد حجم الملفات المرفوعة عبر Git (100 MB)؛ لذلك تُدار الملفات الكبيرة هنا عبر Git LFS.
-- لرفع ملفات كبيرة جديدة استخدم `git lfs track "*.parquet"` ثم أضِف وادفع كالمعتاد.
+## Notes on Git LFS
+- GitHub enforces a 100 MB file limit for regular Git objects; large assets here are stored using Git LFS.
+- To add large files in future, track them before adding:
 
-### الترخيص والاتصال
-- إن أردت رفع تغييرات أو تبادل ملاحظات فتح issue أو راسلني عبر GitHub.
+```bash
+git lfs track "*.parquet"
+git add .gitattributes
+git add <large-file>
+git commit -m "Add large file via Git LFS"
+git push origin main
+```
+
+## License & contact
+If you want to contribute or report issues, please open an issue or contact the repository owner on GitHub.
 
 ---
-*README مُحدَّث: يشرح طريقة العمل، الاعتمادات، وتعليمات Git LFS لسحب الملفات الكبيرة.*
+*This README was updated to provide an English, professional overview and clear Git LFS instructions.*
