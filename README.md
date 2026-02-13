@@ -35,6 +35,37 @@
  └─ credit_card_transactions.parquet  # tracked via Git LFS
  ```
 
+## Data Description
+The repository contains transaction-level data for credit card activity. Typical columns and content included in the datasets are:
+
+- `transaction_id`: unique identifier for each transaction
+- `timestamp` / `date`: transaction datetime
+- `amount`: transaction amount (numeric)
+- `merchant` / `merchant_category`: merchant name or category
+- `cardholder_id` / `account_id`: anonymized identifier for the cardholder
+- `location` / `country`: transaction location (when available)
+- `is_fraud` or `label`: binary indicator (fraud / non-fraud) when provided
+
+Notes:
+- Column names and exact schema may differ between raw and cleaned files; inspect a sample via the notebook (cells 1–3) to confirm.
+- Sensitive fields (if present) should be handled according to privacy rules; do not publish or share raw personal data.
+
+## Notebook workflow (project steps included in `code.ipynb`)
+The analysis notebook is organized to reproduce the full EDA and contains the following main steps:
+
+1. Environment setup — import libraries and set display options.
+2. Data loading — read raw/parquet files and show sample rows.
+3. Initial data audit — examine schema, missing values, and basic statistics.
+4. Data cleaning & preprocessing — handle missing values, type conversions, timestamp parsing, and deduplication.
+5. Feature engineering — create time-based features, aggregated features, and categorical encodings.
+6. Exploratory analysis & visualizations — distributions, time-series patterns, merchant/category summaries, and fraud-specific views.
+7. Class imbalance handling — resampling strategies and baseline considerations for imbalanced fraud labels.
+8. Baseline modeling (optional) — simple models (e.g., logistic regression, tree-based) and cross-validation to get baseline metrics.
+9. Results & interpretation — evaluate model performance, present key visual findings, and summarize actionable insights.
+10. Next steps & reproducibility notes — suggestions for advanced modeling, deployment, and data governance.
+
+Each step contains code cells and short narrative notes to explain the reasoning and findings. You can run the notebook end-to-end or execute selected sections interactively.
+
  ## Requirements
  - Python 3.8 or newer
  - Git
